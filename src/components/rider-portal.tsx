@@ -31,6 +31,8 @@ import { Brand, Empty } from "./shop-shared";
 import { getRiderWork } from "@/lib/staff.functions";
 import riderArt from "@/assets/delivery-rider.asset.json";
 import { money, shortId, lines, riderEarnings } from "@/lib/commerce";
+// Temporary: sign-in hidden for owner preview; data still needs a staff login.
+const PREVIEW = true;
 export function useStaffRole(role: "admin" | "rider") {
   const { user, ready } = useAuth();
   return useQuery({
@@ -188,9 +190,9 @@ export function RiderPortal({
           : undefined;
   return (
     <RiderShell {...(title ? { title } : {})}>
-      {!ready || role.isLoading ? (
+      {!PREVIEW && (!ready || role.isLoading) ? (
         <p className="py-12 text-center text-sm">Loading partner account…</p>
-      ) : !user ? (
+      ) : !PREVIEW && !user ? (
         <>
           <div className="rider-login-brand">
             <Brand />
@@ -200,7 +202,7 @@ export function RiderPortal({
           </div>
           <AuthForm />
         </>
-      ) : !role.data ? (
+      ) : !PREVIEW && !role.data ? (
         <Empty icon={ShieldCheck} title="Delivery partner access">
           <p>
             Your account needs approval from the Brothers Kart administrator before you can receive
@@ -215,7 +217,7 @@ export function RiderPortal({
           <div className="auth-heading">
             <UserRound />
             <h2>{profile?.display_name || "Delivery partner"}</h2>
-            <p>Partner ID: {user.id.slice(0, 8).toUpperCase()}</p>
+            <p>Partner ID: {(user?.id ?? "preview0").slice(0, 8).toUpperCase()}</p>
             <span className="status Delivered mt-3">
               <ShieldCheck size={12} />
               Verified partner

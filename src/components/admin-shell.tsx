@@ -19,6 +19,8 @@ import { AuthForm } from "./customer-account";
 import { Brand } from "./shop-shared";
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
+// Temporary: sign-in screens hidden so the owner can preview panels. Data still requires a staff login (RLS).
+export const PREVIEW_OPEN = true;
 export const adminNav = [
   { to: "/admin" as const, label: "Dashboard", icon: LayoutDashboard },
   { to: "/admin/orders" as const, label: "Live orders", icon: ShoppingCart },
@@ -108,16 +110,16 @@ export function AdminShell({ children }: { children: ReactNode }) {
           </div>
         </header>
         <main className="admin-content">
-          {!ready || role.isLoading ? (
+          {!PREVIEW_OPEN && (!ready || role.isLoading) ? (
             <div className="access-panel">
               <p>Checking account access…</p>
             </div>
-          ) : !user ? (
+          ) : !PREVIEW_OPEN && !user ? (
             <div className="access-panel">
               <Brand />
               <AuthForm />
             </div>
-          ) : !role.data ? (
+          ) : !PREVIEW_OPEN && !role.data ? (
             <div className="access-panel">
               <ShieldCheck />
               <h1>Administrator access required</h1>
