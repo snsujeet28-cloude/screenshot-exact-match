@@ -28,3 +28,11 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## App architecture
+- Use TanStack file routes and shared portal components; this hosting stack does not support Next.js.
+- Fetch the public catalog through a publishable-key server function and Query loaders; never use a privileged client for public catalog reads.
+- Persist only the cart in Zustand browser storage; durable profiles, staff roles, orders, settings and ledgers live in Cloud with RLS.
+- Keep roles in user_roles; staff operations require database role validation, never browser storage or editable profile fields.
+- Place orders through the transactional place_order RPC so client prices and fees cannot override catalog pricing.
+- Delivery partners fetch assigned deliveries through a role-checked server function that omits the delivery OTP; completion validates OTP through a locked database RPC.

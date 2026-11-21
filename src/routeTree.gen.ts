@@ -10,33 +10,284 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AccountRouteImport } from './routes/account'
+import { Route as CartRouteImport } from './routes/cart'
+import { Route as CategoriesRouteImport } from './routes/categories'
+import { Route as CheckoutRouteImport } from './routes/checkout'
+import { Route as ResetPasswordRouteImport } from './routes/reset-password'
+import { Route as AdminIndexRouteImport } from './routes/admin.index'
+import { Route as AdminOrdersRouteImport } from './routes/admin.orders'
+import { Route as AdminProductsRouteImport } from './routes/admin.products'
+import { Route as AdminRidersRouteImport } from './routes/admin.riders'
+import { Route as AdminSettingsRouteImport } from './routes/admin.settings'
+import { Route as AdminVendorsRouteImport } from './routes/admin.vendors'
+import { Route as CategorySlugRouteImport } from './routes/category.$slug'
+import { Route as ProductIdRouteImport } from './routes/product.$id'
+import { Route as RiderIndexRouteImport } from './routes/rider.index'
+import { Route as RiderEarningsRouteImport } from './routes/rider.earnings'
+import { Route as RiderLoginRouteImport } from './routes/rider.login'
+import { Route as RiderProfileRouteImport } from './routes/rider.profile'
+import { Route as TrackOrderIdRouteImport } from './routes/track.$orderId'
+import { Route as RiderOrderIdRouteImport } from './routes/rider.order.$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AccountRoute = AccountRouteImport.update({
+  id: '/account',
+  path: '/account',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CartRoute = CartRouteImport.update({
+  id: '/cart',
+  path: '/cart',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CategoriesRoute = CategoriesRouteImport.update({
+  id: '/categories',
+  path: '/categories',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CheckoutRoute = CheckoutRouteImport.update({
+  id: '/checkout',
+  path: '/checkout',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResetPasswordRoute = ResetPasswordRouteImport.update({
+  id: '/reset-password',
+  path: '/reset-password',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminIndexRoute = AdminIndexRouteImport.update({
+  id: '/admin/',
+  path: '/admin/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminOrdersRoute = AdminOrdersRouteImport.update({
+  id: '/admin/orders',
+  path: '/admin/orders',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminProductsRoute = AdminProductsRouteImport.update({
+  id: '/admin/products',
+  path: '/admin/products',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminRidersRoute = AdminRidersRouteImport.update({
+  id: '/admin/riders',
+  path: '/admin/riders',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminSettingsRoute = AdminSettingsRouteImport.update({
+  id: '/admin/settings',
+  path: '/admin/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminVendorsRoute = AdminVendorsRouteImport.update({
+  id: '/admin/vendors',
+  path: '/admin/vendors',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CategorySlugRoute = CategorySlugRouteImport.update({
+  id: '/category/$slug',
+  path: '/category/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProductIdRoute = ProductIdRouteImport.update({
+  id: '/product/$id',
+  path: '/product/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RiderIndexRoute = RiderIndexRouteImport.update({
+  id: '/rider/',
+  path: '/rider/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RiderEarningsRoute = RiderEarningsRouteImport.update({
+  id: '/rider/earnings',
+  path: '/rider/earnings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RiderLoginRoute = RiderLoginRouteImport.update({
+  id: '/rider/login',
+  path: '/rider/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RiderProfileRoute = RiderProfileRouteImport.update({
+  id: '/rider/profile',
+  path: '/rider/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TrackOrderIdRoute = TrackOrderIdRouteImport.update({
+  id: '/track/$orderId',
+  path: '/track/$orderId',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RiderOrderIdRoute = RiderOrderIdRouteImport.update({
+  id: '/rider/order/$id',
+  path: '/rider/order/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/account': typeof AccountRoute
+  '/cart': typeof CartRoute
+  '/categories': typeof CategoriesRoute
+  '/checkout': typeof CheckoutRoute
+  '/reset-password': typeof ResetPasswordRoute
+  '/admin/orders': typeof AdminOrdersRoute
+  '/admin/products': typeof AdminProductsRoute
+  '/admin/riders': typeof AdminRidersRoute
+  '/admin/settings': typeof AdminSettingsRoute
+  '/admin/vendors': typeof AdminVendorsRoute
+  '/category/$slug': typeof CategorySlugRoute
+  '/product/$id': typeof ProductIdRoute
+  '/rider/earnings': typeof RiderEarningsRoute
+  '/rider/login': typeof RiderLoginRoute
+  '/rider/profile': typeof RiderProfileRoute
+  '/track/$orderId': typeof TrackOrderIdRoute
+  '/admin/': typeof AdminIndexRoute
+  '/rider/': typeof RiderIndexRoute
+  '/rider/order/$id': typeof RiderOrderIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/account': typeof AccountRoute
+  '/cart': typeof CartRoute
+  '/categories': typeof CategoriesRoute
+  '/checkout': typeof CheckoutRoute
+  '/reset-password': typeof ResetPasswordRoute
+  '/admin/orders': typeof AdminOrdersRoute
+  '/admin/products': typeof AdminProductsRoute
+  '/admin/riders': typeof AdminRidersRoute
+  '/admin/settings': typeof AdminSettingsRoute
+  '/admin/vendors': typeof AdminVendorsRoute
+  '/category/$slug': typeof CategorySlugRoute
+  '/product/$id': typeof ProductIdRoute
+  '/rider/earnings': typeof RiderEarningsRoute
+  '/rider/login': typeof RiderLoginRoute
+  '/rider/profile': typeof RiderProfileRoute
+  '/track/$orderId': typeof TrackOrderIdRoute
+  '/admin': typeof AdminIndexRoute
+  '/rider': typeof RiderIndexRoute
+  '/rider/order/$id': typeof RiderOrderIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/account': typeof AccountRoute
+  '/cart': typeof CartRoute
+  '/categories': typeof CategoriesRoute
+  '/checkout': typeof CheckoutRoute
+  '/reset-password': typeof ResetPasswordRoute
+  '/admin/orders': typeof AdminOrdersRoute
+  '/admin/products': typeof AdminProductsRoute
+  '/admin/riders': typeof AdminRidersRoute
+  '/admin/settings': typeof AdminSettingsRoute
+  '/admin/vendors': typeof AdminVendorsRoute
+  '/category/$slug': typeof CategorySlugRoute
+  '/product/$id': typeof ProductIdRoute
+  '/rider/earnings': typeof RiderEarningsRoute
+  '/rider/login': typeof RiderLoginRoute
+  '/rider/profile': typeof RiderProfileRoute
+  '/track/$orderId': typeof TrackOrderIdRoute
+  '/admin/': typeof AdminIndexRoute
+  '/rider/': typeof RiderIndexRoute
+  '/rider/order/$id': typeof RiderOrderIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/account'
+    | '/cart'
+    | '/categories'
+    | '/checkout'
+    | '/reset-password'
+    | '/admin/orders'
+    | '/admin/products'
+    | '/admin/riders'
+    | '/admin/settings'
+    | '/admin/vendors'
+    | '/category/$slug'
+    | '/product/$id'
+    | '/rider/earnings'
+    | '/rider/login'
+    | '/rider/profile'
+    | '/track/$orderId'
+    | '/admin/'
+    | '/rider/'
+    | '/rider/order/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/account'
+    | '/cart'
+    | '/categories'
+    | '/checkout'
+    | '/reset-password'
+    | '/admin/orders'
+    | '/admin/products'
+    | '/admin/riders'
+    | '/admin/settings'
+    | '/admin/vendors'
+    | '/category/$slug'
+    | '/product/$id'
+    | '/rider/earnings'
+    | '/rider/login'
+    | '/rider/profile'
+    | '/track/$orderId'
+    | '/admin'
+    | '/rider'
+    | '/rider/order/$id'
+  id:
+    | '__root__'
+    | '/'
+    | '/account'
+    | '/cart'
+    | '/categories'
+    | '/checkout'
+    | '/reset-password'
+    | '/admin/orders'
+    | '/admin/products'
+    | '/admin/riders'
+    | '/admin/settings'
+    | '/admin/vendors'
+    | '/category/$slug'
+    | '/product/$id'
+    | '/rider/earnings'
+    | '/rider/login'
+    | '/rider/profile'
+    | '/track/$orderId'
+    | '/admin/'
+    | '/rider/'
+    | '/rider/order/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AccountRoute: typeof AccountRoute
+  CartRoute: typeof CartRoute
+  CategoriesRoute: typeof CategoriesRoute
+  CheckoutRoute: typeof CheckoutRoute
+  ResetPasswordRoute: typeof ResetPasswordRoute
+  AdminOrdersRoute: typeof AdminOrdersRoute
+  AdminProductsRoute: typeof AdminProductsRoute
+  AdminRidersRoute: typeof AdminRidersRoute
+  AdminSettingsRoute: typeof AdminSettingsRoute
+  AdminVendorsRoute: typeof AdminVendorsRoute
+  CategorySlugRoute: typeof CategorySlugRoute
+  ProductIdRoute: typeof ProductIdRoute
+  RiderEarningsRoute: typeof RiderEarningsRoute
+  RiderLoginRoute: typeof RiderLoginRoute
+  RiderProfileRoute: typeof RiderProfileRoute
+  TrackOrderIdRoute: typeof TrackOrderIdRoute
+  AdminIndexRoute: typeof AdminIndexRoute
+  RiderIndexRoute: typeof RiderIndexRoute
+  RiderOrderIdRoute: typeof RiderOrderIdRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +299,163 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/account': {
+      id: '/account'
+      path: '/account'
+      fullPath: '/account'
+      preLoaderRoute: typeof AccountRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cart': {
+      id: '/cart'
+      path: '/cart'
+      fullPath: '/cart'
+      preLoaderRoute: typeof CartRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/categories': {
+      id: '/categories'
+      path: '/categories'
+      fullPath: '/categories'
+      preLoaderRoute: typeof CategoriesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/checkout': {
+      id: '/checkout'
+      path: '/checkout'
+      fullPath: '/checkout'
+      preLoaderRoute: typeof CheckoutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reset-password': {
+      id: '/reset-password'
+      path: '/reset-password'
+      fullPath: '/reset-password'
+      preLoaderRoute: typeof ResetPasswordRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/': {
+      id: '/admin/'
+      path: '/admin'
+      fullPath: '/admin/'
+      preLoaderRoute: typeof AdminIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/orders': {
+      id: '/admin/orders'
+      path: '/admin/orders'
+      fullPath: '/admin/orders'
+      preLoaderRoute: typeof AdminOrdersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/products': {
+      id: '/admin/products'
+      path: '/admin/products'
+      fullPath: '/admin/products'
+      preLoaderRoute: typeof AdminProductsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/riders': {
+      id: '/admin/riders'
+      path: '/admin/riders'
+      fullPath: '/admin/riders'
+      preLoaderRoute: typeof AdminRidersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/settings': {
+      id: '/admin/settings'
+      path: '/admin/settings'
+      fullPath: '/admin/settings'
+      preLoaderRoute: typeof AdminSettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/vendors': {
+      id: '/admin/vendors'
+      path: '/admin/vendors'
+      fullPath: '/admin/vendors'
+      preLoaderRoute: typeof AdminVendorsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/category/$slug': {
+      id: '/category/$slug'
+      path: '/category/$slug'
+      fullPath: '/category/$slug'
+      preLoaderRoute: typeof CategorySlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/product/$id': {
+      id: '/product/$id'
+      path: '/product/$id'
+      fullPath: '/product/$id'
+      preLoaderRoute: typeof ProductIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rider/': {
+      id: '/rider/'
+      path: '/rider'
+      fullPath: '/rider/'
+      preLoaderRoute: typeof RiderIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rider/earnings': {
+      id: '/rider/earnings'
+      path: '/rider/earnings'
+      fullPath: '/rider/earnings'
+      preLoaderRoute: typeof RiderEarningsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rider/login': {
+      id: '/rider/login'
+      path: '/rider/login'
+      fullPath: '/rider/login'
+      preLoaderRoute: typeof RiderLoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rider/profile': {
+      id: '/rider/profile'
+      path: '/rider/profile'
+      fullPath: '/rider/profile'
+      preLoaderRoute: typeof RiderProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/track/$orderId': {
+      id: '/track/$orderId'
+      path: '/track/$orderId'
+      fullPath: '/track/$orderId'
+      preLoaderRoute: typeof TrackOrderIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rider/order/$id': {
+      id: '/rider/order/$id'
+      path: '/rider/order/$id'
+      fullPath: '/rider/order/$id'
+      preLoaderRoute: typeof RiderOrderIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AccountRoute: AccountRoute,
+  CartRoute: CartRoute,
+  CategoriesRoute: CategoriesRoute,
+  CheckoutRoute: CheckoutRoute,
+  ResetPasswordRoute: ResetPasswordRoute,
+  AdminOrdersRoute: AdminOrdersRoute,
+  AdminProductsRoute: AdminProductsRoute,
+  AdminRidersRoute: AdminRidersRoute,
+  AdminSettingsRoute: AdminSettingsRoute,
+  AdminVendorsRoute: AdminVendorsRoute,
+  CategorySlugRoute: CategorySlugRoute,
+  ProductIdRoute: ProductIdRoute,
+  RiderEarningsRoute: RiderEarningsRoute,
+  RiderLoginRoute: RiderLoginRoute,
+  RiderProfileRoute: RiderProfileRoute,
+  TrackOrderIdRoute: TrackOrderIdRoute,
+  AdminIndexRoute: AdminIndexRoute,
+  RiderIndexRoute: RiderIndexRoute,
+  RiderOrderIdRoute: RiderOrderIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

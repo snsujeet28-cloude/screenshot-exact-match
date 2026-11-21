@@ -1,0 +1,3 @@
+ALTER TABLE public.orders ADD COLUMN rider_earning numeric NOT NULL DEFAULT 10 CHECK(rider_earning=10);
+CREATE FUNCTION public.customer_rider(order_id uuid) RETURNS TABLE(display_name text,phone text) LANGUAGE sql STABLE SECURITY DEFINER SET search_path=public AS $$ SELECT p.display_name,p.phone FROM public.orders o JOIN public.profiles p ON p.id=o.rider_id WHERE o.id=order_id AND o.customer_id=auth.uid() $$;
+REVOKE ALL ON FUNCTION public.customer_rider(uuid) FROM PUBLIC; GRANT EXECUTE ON FUNCTION public.customer_rider(uuid) TO authenticated;
