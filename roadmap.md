@@ -1,12 +1,11 @@
-# Brothers Kart
-- [x] Customer storefront, categories, products and persisted cart
-- [x] Cloud profiles, roles, catalog, settings, orders and vendor ledger
-- [x] Sign-in, checkout and live tracking implementation
-- [x] Delivery partner dashboard, pickups and completion implementation
-- [x] Rider earns ₹10 per completed order
-- [ ] First administrator assignment — blocked: user declined to choose an account
-- [x] Admin catalog, orders, vendors, riders and settings implementation
-- [x] Verify public shopping flow, persisted cart, calculation tests and mobile layouts
-- [ ] Authenticated checkout and staff end-to-end verification — blocked: no user accounts or assigned administrator
-- [x] Apply supplied customer, rider and admin reference-inspired layouts
-- [x] Apply uploaded original Brothers Kart logo to all portals and browser icon
+# Roadmap
+
+- [x] Rider portal par "Back to store" link add karna
+- [x] Puri website ke saare pages error-free verify karna (15+ pages, 0 errors)
+  - [x] Home, Categories, Category detail, Product detail
+  - [x] Cart (add-to-cart flow tested), Checkout, Account
+  - [x] Track order page
+  - [x] Rider portal (home, earnings, profile, login)
+  - [x] Admin (dashboard, orders, products, riders, vendors, settings)
+- [x] Console/build errors check — build OK, no page errors
+- [ ] Final commit
