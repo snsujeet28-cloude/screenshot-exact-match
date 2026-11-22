@@ -1,11 +1,8 @@
 # Roadmap
 
 - [x] Rider portal par "Back to store" link add karna
-- [x] Puri website ke saare pages error-free verify karna (15+ pages, 0 errors)
-  - [x] Home, Categories, Category detail, Product detail
-  - [x] Cart (add-to-cart flow tested), Checkout, Account
-  - [x] Track order page
-  - [x] Rider portal (home, earnings, profile, login)
-  - [x] Admin (dashboard, orders, products, riders, vendors, settings)
-- [x] Console/build errors check — build OK, no page errors
+- [x] Puri website ke saare pages error-free verify karna (19/19 tests pass)
+- [ ] Rider aur Admin panels mein sign-in wapas lagana
+- [ ] User account set karna: sujeet.56656@gmail.com (admin + rider roles)
+- [ ] Sign-in ke saath dono panels verify karna
 - [ ] Final commit
