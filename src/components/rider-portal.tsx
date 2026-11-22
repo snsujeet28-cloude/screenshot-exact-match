@@ -21,6 +21,7 @@ import {
   CheckCircle,
   LogOut,
   ShieldCheck,
+  Store,
 } from "lucide-react";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
@@ -70,6 +71,11 @@ function RiderShell({ children, title }: { children: ReactNode; title?: string }
             onClick={() => toast("Your assigned deliveries appear on the home screen.")}
           >
             <Bell />
+          </Button>
+          <Button asChild variant="ghost" size="icon" aria-label="Back to store">
+            <Link to="/">
+              <Store />
+            </Link>
           </Button>
         </div>
       </header>
